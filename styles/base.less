@@ -1,0 +1,394 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600|Open+Sans+Condensed:300,700);
+
+@blueColor: #1b587c;
+@redColor: #9f2936;
+@goldColor: #ffc000;
+@grayTextColor: #222;
+@whiteBgColor: #fff;
+
+@headerHeight: 400px;
+@circleSize: 50px;
+@targetWidth: 800px;
+@headerTextSize: 32pt;
+@bodyTextSize: 12pt;
+@sidebarWidth: 150px;
+
+
+@pageWidth: @targetWidth;
+@halfWidth: @targetWidth / 2.0;
+
+body {
+	background-color: @whiteBgColor;
+	font-family: 'Open Sans', sans-serif;
+	padding: 0;
+	margin: 0;
+	color: @grayTextColor;
+	font-size: @bodyTextSize;
+}
+
+a {
+	color: @blueColor;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: @headerTextSize;
+	margin: 0;
+}
+
+h2 {
+	font-size: @headerTextSize * 0.8;
+}
+
+h3, h4, h5, h6 {
+	font-size: @headerTextSize * 0.6;
+}
+
+p {
+	line-height: 150%;
+}
+
+
+
+.page-header {
+	height: @headerHeight;
+	position: relative;
+	z-index: 20;
+	background-image: linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.5) 100%);
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.5) 100%);
+
+	a.home-link {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+
+.page-image-box {
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	right: 0;
+	height: @headerHeight;
+	background: url(../noise.png), url(../top-photos/hack-blue.jpg);
+	//background: url(../noise.png), url(../top-photos/throne-gold.jpg);
+	//background: url(../noise.png), url(../top-photos/donut-red.jpg);
+	background-position: center center;
+	background-repeat: repeat, no-repeat;
+	-moz-background-size: auto, cover;
+	-o-background-size: auto, cover;
+	-webkit-background-size: auto, cover;
+	background-size: auto, cover;
+	/*background-image: url(top-photos/test-blue.jpg), url(noise.png);
+    background-position: center center;
+    background-repeat: no-repeat, repeat;
+    -moz-background-size: cover, auto;
+    -o-background-size: cover, auto;
+    -webkit-background-size: cover, auto;
+    background-size: cover, auto;*/
+}
+
+.page-header-title {
+	z-index: 10;
+	position: absolute;
+	left: 50%;
+	right: 50%;
+	bottom: 10px;
+	height: auto;
+	font-size: @headerTextSize;
+
+
+	.main-title {
+		position: absolute;
+		left: -@halfWidth;
+		width: @halfWidth;
+		color: #fff;
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 300;
+		text-align: left;
+		height: auto;
+		bottom: 0;
+	}
+
+	.sub-title {
+		position: absolute;
+		right: -@halfWidth;
+		width: @halfWidth;
+		color: #fff;
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 300;
+		text-align: right;
+		height: auto;
+		bottom: 0;
+		/*font-size: 60%;*/
+	}
+}
+
+.page-main {
+	z-index: 10;
+	background-color: @whiteBgColor;
+	position: relative;
+	min-height: @headerHeight;
+	width: 100%;
+	padding: 20px 0 0 0;
+}
+
+
+.page-main-body {
+	z-index: 10;
+	position: relative;
+	width: @pageWidth;
+	margin: 10px auto;
+}
+
+article .post-content h1:nth-child(1) {
+	display: none;
+}
+
+article .post-content ul:nth-child(2) {
+	display: none;
+}
+
+article .post-metadata {
+	font-size: 70%;
+	opacity: 0.6;
+}
+
+.button {
+	padding: 10px;
+	margin: 10px;
+}
+
+.actions {
+	margin: 20px 0;
+}
+
+	.actions .button {
+		padding: 10px;
+		margin: 20px 10px;
+		background-color: #FFF;
+		-webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
+		box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
+		border-radius: 5px;
+	}
+
+
+
+a.button:hover {
+	text-decoration: underline;
+}
+
+
+
+.post-in-list {
+	margin-top: 30px;
+}
+
+
+
+
+.page-header-center-logo {
+	border-radius: 50%;
+	width: @circleSize*2;
+	height: @circleSize*2;
+	background-color: @whiteBgColor;
+	position: absolute;
+	bottom: -@circleSize;
+	left: 50%;
+	right: 50%;
+	margin: 0 -@circleSize;
+	background-image: url('../center-aligned-no-shadow-small.png');
+	background-position: center center;
+	-moz-background-size: @circleSize * 1.5;
+	-o-background-size: @circleSize * 1.5;
+	-webkit-background-size: @circleSize * 1.5;
+	background-size: @circleSize * 1.5;
+	background-repeat: no-repeat;
+	/*-moz-transition: -moz-transform 1s ease-in-out;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);*/
+	-moz-animation-name: spin;
+	-o-animation-name: spin;
+	-webkit-animation-name: spin;
+	animation-name: spin;
+	-moz-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s; /* 3 seconds */
+	-moz-animation-iteration-count: 1;
+	-o-animation-iteration-count: 1;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-moz-animation-timing-function: ease-in-out;
+	-o-animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
+}
+
+	.page-header-center-logo:hover {
+		-moz-animation-play-state: running;
+		-o-animation-play-state: running;
+		-webkit-animation-play-state: running;
+		animation-play-state: running;
+	}
+
+
+
+
+@-moz-keyframes noSpin {
+	to {
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes noSpin {
+	to {
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes noSpin {
+	to {
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+
+
+@keyframes spin {
+	from {
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	from {
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-moz-keyframes spin {
+	from {
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+
+
+.side-menu {
+	width: @sidebarWidth;
+	z-index: 105;
+	position: absolute;
+	overflow-x: visible;
+	left: -(@sidebarWidth+30px);
+	margin-top: 70px;
+
+	a {
+		color: @blueColor;
+		text-decoration: none;
+	}
+
+		a.menu-item {
+			margin: 10px;
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-weight: 300;
+			font-size: @headerTextSize;
+			display: block;
+			position: relative;
+			width: @targetWidth;
+			pointer-events: none;
+			text-transform: uppercase;
+
+			.main-menu-title {
+				width: @sidebarWidth;
+				text-align: right;
+				pointer-events: all;
+				display: inline-block;
+			}
+
+			.menu-extra-text {
+				opacity: 0;
+				background-color: #fff;
+				-moz-transition: opacity 0.5s linear;
+				-o-transition: opacity 0.5s linear;
+				-webkit-transition: opacity 0.5s linear;
+				transition: opacity 0.5s linear;
+				padding-right: 10px;
+				pointer-events: none;
+			}
+		}
+
+			a.menu-item:hover .menu-extra-text {
+				opacity: 1;
+			}
+}
+
+
+.whats-cool {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 150%;
+	margin-top: 30px;
+
+	p {
+		margin: 0;
+	}
+}
